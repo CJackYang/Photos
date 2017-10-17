@@ -15,6 +15,17 @@
 		F6066DF61F73F5CF0078EC9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6066DF41F73F5CF0078EC9D /* LaunchScreen.storyboard */; };
 		F6066E011F73F5CF0078EC9D /* PhotosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6066E001F73F5CF0078EC9D /* PhotosTests.m */; };
 		F6066E0C1F73F5CF0078EC9D /* PhotosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F6066E0B1F73F5CF0078EC9D /* PhotosUITests.m */; };
+		F6066E1F1F74060C0078EC9D /* PHAsset+JYEXT.m in Sources */ = {isa = PBXBuildFile; fileRef = F6066E1E1F74060C0078EC9D /* PHAsset+JYEXT.m */; };
+		F65FF6141F77CE9500B38C6E /* PHPhotoLibrary+JYEXT.m in Sources */ = {isa = PBXBuildFile; fileRef = F65FF6131F77CE9500B38C6E /* PHPhotoLibrary+JYEXT.m */; };
+		F65FF6171F77D5EF00B38C6E /* PHFetchResult+JYEXT.m in Sources */ = {isa = PBXBuildFile; fileRef = F65FF6161F77D5EF00B38C6E /* PHFetchResult+JYEXT.m */; };
+		F65FF61A1F77D6B900B38C6E /* JYAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = F65FF6191F77D6B900B38C6E /* JYAsset.m */; };
+		F65FF61F1F77FC7300B38C6E /* JYCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F65FF61E1F77FC7300B38C6E /* JYCollectionViewCell.m */; };
+		F65FF6231F7801A300B38C6E /* JYBigImgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F65FF6221F7801A300B38C6E /* JYBigImgCell.m */; };
+		F677BF4C1F95B647009184D1 /* JYForceTouchPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F677BF4B1F95B647009184D1 /* JYForceTouchPreviewController.m */; };
+		F677BF4F1F95B7B5009184D1 /* JYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F677BF4E1F95B7B5009184D1 /* JYProgressHUD.m */; };
+		F677BF521F961257009184D1 /* JYShowBigImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F677BF511F961257009184D1 /* JYShowBigImgViewController.m */; };
+		F6E131091F7810EF00185833 /* JYThumbVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E131071F7810EF00185833 /* JYThumbVC.m */; };
+		F6E1310A1F7810EF00185833 /* JYThumbVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E131081F7810EF00185833 /* JYThumbVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +62,28 @@
 		F6066E071F73F5CF0078EC9D /* PhotosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6066E0B1F73F5CF0078EC9D /* PhotosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosUITests.m; sourceTree = "<group>"; };
 		F6066E0D1F73F5CF0078EC9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6066E1D1F74060C0078EC9D /* PHAsset+JYEXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PHAsset+JYEXT.h"; sourceTree = "<group>"; };
+		F6066E1E1F74060C0078EC9D /* PHAsset+JYEXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PHAsset+JYEXT.m"; sourceTree = "<group>"; };
+		F65FF6121F77CE9500B38C6E /* PHPhotoLibrary+JYEXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PHPhotoLibrary+JYEXT.h"; sourceTree = "<group>"; };
+		F65FF6131F77CE9500B38C6E /* PHPhotoLibrary+JYEXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PHPhotoLibrary+JYEXT.m"; sourceTree = "<group>"; };
+		F65FF6151F77D5EF00B38C6E /* PHFetchResult+JYEXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PHFetchResult+JYEXT.h"; sourceTree = "<group>"; };
+		F65FF6161F77D5EF00B38C6E /* PHFetchResult+JYEXT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PHFetchResult+JYEXT.m"; sourceTree = "<group>"; };
+		F65FF6181F77D6B900B38C6E /* JYAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYAsset.h; sourceTree = "<group>"; };
+		F65FF6191F77D6B900B38C6E /* JYAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYAsset.m; sourceTree = "<group>"; };
+		F65FF61D1F77FC7300B38C6E /* JYCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCollectionViewCell.h; sourceTree = "<group>"; };
+		F65FF61E1F77FC7300B38C6E /* JYCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCollectionViewCell.m; sourceTree = "<group>"; };
+		F65FF6201F77FE4700B38C6E /* JYConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYConst.h; sourceTree = "<group>"; };
+		F65FF6211F7801A300B38C6E /* JYBigImgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBigImgCell.h; sourceTree = "<group>"; };
+		F65FF6221F7801A300B38C6E /* JYBigImgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBigImgCell.m; sourceTree = "<group>"; };
+		F677BF4A1F95B647009184D1 /* JYForceTouchPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYForceTouchPreviewController.h; sourceTree = "<group>"; };
+		F677BF4B1F95B647009184D1 /* JYForceTouchPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYForceTouchPreviewController.m; sourceTree = "<group>"; };
+		F677BF4D1F95B7B5009184D1 /* JYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYProgressHUD.h; sourceTree = "<group>"; };
+		F677BF4E1F95B7B5009184D1 /* JYProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYProgressHUD.m; sourceTree = "<group>"; };
+		F677BF501F961257009184D1 /* JYShowBigImgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYShowBigImgViewController.h; sourceTree = "<group>"; };
+		F677BF511F961257009184D1 /* JYShowBigImgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYShowBigImgViewController.m; sourceTree = "<group>"; };
+		F6E131061F7810EF00185833 /* JYThumbVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYThumbVC.h; path = ../../JYThumbVC.h; sourceTree = "<group>"; };
+		F6E131071F7810EF00185833 /* JYThumbVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYThumbVC.m; path = ../../JYThumbVC.m; sourceTree = "<group>"; };
+		F6E131081F7810EF00185833 /* JYThumbVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JYThumbVC.xib; path = ../../JYThumbVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +134,8 @@
 		F6066DE51F73F5CF0078EC9D /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				F65FF61C1F77FC0F00B38C6E /* UI */,
+				F6066E191F73F6450078EC9D /* JYPhotos */,
 				F6066DE91F73F5CF0078EC9D /* AppDelegate.h */,
 				F6066DEA1F73F5CF0078EC9D /* AppDelegate.m */,
 				F6066DEC1F73F5CF0078EC9D /* ViewController.h */,
@@ -138,6 +173,42 @@
 				F6066E0D1F73F5CF0078EC9D /* Info.plist */,
 			);
 			path = PhotosUITests;
+			sourceTree = "<group>";
+		};
+		F6066E191F73F6450078EC9D /* JYPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				F6066E1D1F74060C0078EC9D /* PHAsset+JYEXT.h */,
+				F6066E1E1F74060C0078EC9D /* PHAsset+JYEXT.m */,
+				F65FF6121F77CE9500B38C6E /* PHPhotoLibrary+JYEXT.h */,
+				F65FF6131F77CE9500B38C6E /* PHPhotoLibrary+JYEXT.m */,
+				F65FF6151F77D5EF00B38C6E /* PHFetchResult+JYEXT.h */,
+				F65FF6161F77D5EF00B38C6E /* PHFetchResult+JYEXT.m */,
+				F65FF6181F77D6B900B38C6E /* JYAsset.h */,
+				F65FF6191F77D6B900B38C6E /* JYAsset.m */,
+			);
+			path = JYPhotos;
+			sourceTree = "<group>";
+		};
+		F65FF61C1F77FC0F00B38C6E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F6E131061F7810EF00185833 /* JYThumbVC.h */,
+				F6E131071F7810EF00185833 /* JYThumbVC.m */,
+				F6E131081F7810EF00185833 /* JYThumbVC.xib */,
+				F677BF4A1F95B647009184D1 /* JYForceTouchPreviewController.h */,
+				F677BF4B1F95B647009184D1 /* JYForceTouchPreviewController.m */,
+				F65FF61D1F77FC7300B38C6E /* JYCollectionViewCell.h */,
+				F65FF61E1F77FC7300B38C6E /* JYCollectionViewCell.m */,
+				F65FF6201F77FE4700B38C6E /* JYConst.h */,
+				F65FF6211F7801A300B38C6E /* JYBigImgCell.h */,
+				F65FF6221F7801A300B38C6E /* JYBigImgCell.m */,
+				F677BF4D1F95B7B5009184D1 /* JYProgressHUD.h */,
+				F677BF4E1F95B7B5009184D1 /* JYProgressHUD.m */,
+				F677BF501F961257009184D1 /* JYShowBigImgViewController.h */,
+				F677BF511F961257009184D1 /* JYShowBigImgViewController.m */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +322,7 @@
 			files = (
 				F6066DF61F73F5CF0078EC9D /* LaunchScreen.storyboard in Resources */,
 				F6066DF31F73F5CF0078EC9D /* Assets.xcassets in Resources */,
+				F6E1310A1F7810EF00185833 /* JYThumbVC.xib in Resources */,
 				F6066DF11F73F5CF0078EC9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,9 +348,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F65FF6231F7801A300B38C6E /* JYBigImgCell.m in Sources */,
+				F6066E1F1F74060C0078EC9D /* PHAsset+JYEXT.m in Sources */,
+				F6E131091F7810EF00185833 /* JYThumbVC.m in Sources */,
+				F677BF4C1F95B647009184D1 /* JYForceTouchPreviewController.m in Sources */,
+				F65FF6171F77D5EF00B38C6E /* PHFetchResult+JYEXT.m in Sources */,
 				F6066DEE1F73F5CF0078EC9D /* ViewController.m in Sources */,
+				F677BF521F961257009184D1 /* JYShowBigImgViewController.m in Sources */,
+				F65FF61F1F77FC7300B38C6E /* JYCollectionViewCell.m in Sources */,
 				F6066DEB1F73F5CF0078EC9D /* AppDelegate.m in Sources */,
+				F65FF6141F77CE9500B38C6E /* PHPhotoLibrary+JYEXT.m in Sources */,
 				F6066DE81F73F5CF0078EC9D /* main.m in Sources */,
+				F65FF61A1F77D6B900B38C6E /* JYAsset.m in Sources */,
+				F677BF4F1F95B7B5009184D1 /* JYProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +600,7 @@
 				F6066E121F73F5CF0078EC9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6066E131F73F5CF0078EC9D /* Build configuration list for PBXNativeTarget "PhotosTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +609,7 @@
 				F6066E151F73F5CF0078EC9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F6066E161F73F5CF0078EC9D /* Build configuration list for PBXNativeTarget "PhotosUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +618,7 @@
 				F6066E181F73F5CF0078EC9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
