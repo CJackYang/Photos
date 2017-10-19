@@ -24,6 +24,10 @@
 		F677BF4C1F95B647009184D1 /* JYForceTouchPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F677BF4B1F95B647009184D1 /* JYForceTouchPreviewController.m */; };
 		F677BF4F1F95B7B5009184D1 /* JYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F677BF4E1F95B7B5009184D1 /* JYProgressHUD.m */; };
 		F677BF521F961257009184D1 /* JYShowBigImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F677BF511F961257009184D1 /* JYShowBigImgViewController.m */; };
+		F68C6C231F98EEC200ABB648 /* FirstDecorationSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F68C6C1D1F98EEC200ABB648 /* FirstDecorationSectionView.m */; };
+		F68C6C241F98EEC200ABB648 /* FirstDecorationSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F68C6C1E1F98EEC200ABB648 /* FirstDecorationSectionView.xib */; };
+		F68C6C251F98EEC200ABB648 /* TYDecorationSectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F68C6C201F98EEC200ABB648 /* TYDecorationSectionLayout.m */; };
+		F68C6C261F98EEC200ABB648 /* FMHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F68C6C221F98EEC200ABB648 /* FMHeadView.m */; };
 		F6E131091F7810EF00185833 /* JYThumbVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E131071F7810EF00185833 /* JYThumbVC.m */; };
 		F6E1310A1F7810EF00185833 /* JYThumbVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E131081F7810EF00185833 /* JYThumbVC.xib */; };
 /* End PBXBuildFile section */
@@ -81,6 +85,13 @@
 		F677BF4E1F95B7B5009184D1 /* JYProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYProgressHUD.m; sourceTree = "<group>"; };
 		F677BF501F961257009184D1 /* JYShowBigImgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYShowBigImgViewController.h; sourceTree = "<group>"; };
 		F677BF511F961257009184D1 /* JYShowBigImgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYShowBigImgViewController.m; sourceTree = "<group>"; };
+		F68C6C1C1F98EEC200ABB648 /* FirstDecorationSectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstDecorationSectionView.h; sourceTree = "<group>"; };
+		F68C6C1D1F98EEC200ABB648 /* FirstDecorationSectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstDecorationSectionView.m; sourceTree = "<group>"; };
+		F68C6C1E1F98EEC200ABB648 /* FirstDecorationSectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstDecorationSectionView.xib; sourceTree = "<group>"; };
+		F68C6C1F1F98EEC200ABB648 /* TYDecorationSectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYDecorationSectionLayout.h; sourceTree = "<group>"; };
+		F68C6C201F98EEC200ABB648 /* TYDecorationSectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYDecorationSectionLayout.m; sourceTree = "<group>"; };
+		F68C6C211F98EEC200ABB648 /* FMHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMHeadView.h; sourceTree = "<group>"; };
+		F68C6C221F98EEC200ABB648 /* FMHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMHeadView.m; sourceTree = "<group>"; };
 		F6E131061F7810EF00185833 /* JYThumbVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYThumbVC.h; path = ../../JYThumbVC.h; sourceTree = "<group>"; };
 		F6E131071F7810EF00185833 /* JYThumbVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYThumbVC.m; path = ../../JYThumbVC.m; sourceTree = "<group>"; };
 		F6E131081F7810EF00185833 /* JYThumbVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JYThumbVC.xib; path = ../../JYThumbVC.xib; sourceTree = "<group>"; };
@@ -193,6 +204,13 @@
 		F65FF61C1F77FC0F00B38C6E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F68C6C1C1F98EEC200ABB648 /* FirstDecorationSectionView.h */,
+				F68C6C1D1F98EEC200ABB648 /* FirstDecorationSectionView.m */,
+				F68C6C1E1F98EEC200ABB648 /* FirstDecorationSectionView.xib */,
+				F68C6C1F1F98EEC200ABB648 /* TYDecorationSectionLayout.h */,
+				F68C6C201F98EEC200ABB648 /* TYDecorationSectionLayout.m */,
+				F68C6C211F98EEC200ABB648 /* FMHeadView.h */,
+				F68C6C221F98EEC200ABB648 /* FMHeadView.m */,
 				F6E131061F7810EF00185833 /* JYThumbVC.h */,
 				F6E131071F7810EF00185833 /* JYThumbVC.m */,
 				F6E131081F7810EF00185833 /* JYThumbVC.xib */,
@@ -323,6 +341,7 @@
 				F6066DF61F73F5CF0078EC9D /* LaunchScreen.storyboard in Resources */,
 				F6066DF31F73F5CF0078EC9D /* Assets.xcassets in Resources */,
 				F6E1310A1F7810EF00185833 /* JYThumbVC.xib in Resources */,
+				F68C6C241F98EEC200ABB648 /* FirstDecorationSectionView.xib in Resources */,
 				F6066DF11F73F5CF0078EC9D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,9 +373,12 @@
 				F677BF4C1F95B647009184D1 /* JYForceTouchPreviewController.m in Sources */,
 				F65FF6171F77D5EF00B38C6E /* PHFetchResult+JYEXT.m in Sources */,
 				F6066DEE1F73F5CF0078EC9D /* ViewController.m in Sources */,
+				F68C6C251F98EEC200ABB648 /* TYDecorationSectionLayout.m in Sources */,
+				F68C6C261F98EEC200ABB648 /* FMHeadView.m in Sources */,
 				F677BF521F961257009184D1 /* JYShowBigImgViewController.m in Sources */,
 				F65FF61F1F77FC7300B38C6E /* JYCollectionViewCell.m in Sources */,
 				F6066DEB1F73F5CF0078EC9D /* AppDelegate.m in Sources */,
+				F68C6C231F98EEC200ABB648 /* FirstDecorationSectionView.m in Sources */,
 				F65FF6141F77CE9500B38C6E /* PHPhotoLibrary+JYEXT.m in Sources */,
 				F6066DE81F73F5CF0078EC9D /* main.m in Sources */,
 				F65FF61A1F77D6B900B38C6E /* JYAsset.m in Sources */,
