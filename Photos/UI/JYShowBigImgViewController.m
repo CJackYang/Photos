@@ -210,9 +210,6 @@
         _modelIdentifile = m.asset.localIdentifier;
         //改变导航标题
         self.title = [NSString stringWithFormat:@"%ld/%ld", _currentPage, self.models.count];
-//        
-//        _navRightBtn.selected = m.isSelected;
-        
         if (m.type == JYAssetTypeGIF ||
             m.type == JYAssetTypeLivePhoto ||
             m.type == PHAssetMediaTypeVideo) {
@@ -251,5 +248,38 @@
     JYAsset *model = self.models[_currentPage-1];
     return model;
 }
+
+//- (UIImageView *)transitionSourceImageView
+//{
+//    JYBigImgCell *cell = (JYBigImgCell *)[_collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:_currentPage-1 inSection:0]];
+//    UIimageView = [[UIImageView alloc] initWithImage:self.mainImageView.image];
+//    imageView.contentMode = self.mainImageView.contentMode;
+//    imageView.clipsToBounds = YES;
+//    imageView.userInteractionEnabled = NO;
+//    imageView.frame = self.mainImageView.frame;
+//    return imageView;
+//}
+
+//- (UIColor *)transitionSourceBackgroundColor
+//{
+//    return self.view.backgroundColor;
+//}
+//
+//- (CGRect)transitionDestinationImageViewFrame
+//{
+//    CGFloat width = CGRectGetWidth(self.view.frame);
+//    CGRect frame = self.mainImageView.frame;
+//    frame.size.width = width;
+//    return frame;
+//}
+//
+//#pragma mark - <RMPZoomTransitionDelegate>
+//
+//- (void)zoomTransitionAnimator:(RMPZoomTransitionAnimator *)animator
+//         didCompleteTransition:(BOOL)didComplete
+//      animatingSourceImageView:(UIImageView *)imageView
+//{
+//    self.mainImageView.image = imageView.image;
+//}
 
 @end

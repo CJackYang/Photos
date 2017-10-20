@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RMPZoomTransitionAnimator.h"
 
 @class JYAssetList;
 
-@interface JYThumbVC : UIViewController
+@interface JYThumbVC : UIViewController<RMPZoomTransitionDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 

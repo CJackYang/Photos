@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <Photos/Photos.h>
+#import "RMPZoomTransitionAnimator.h"
 
 @class JYAsset;
-@interface JYShowBigImgViewController : UIViewController
+@interface JYShowBigImgViewController : UIViewController<RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>
 
 @property (nonatomic, strong) NSArray<JYAsset *> *models;
 

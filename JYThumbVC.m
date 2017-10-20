@@ -19,7 +19,7 @@
 
 #import "TYDecorationSectionLayout.h"
 
-@interface JYThumbVC ()<UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIViewControllerPreviewingDelegate> {
+@interface JYThumbVC ()<UICollectionViewDataSource, UICollectionViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIViewControllerPreviewingDelegate, UIViewControllerTransitioningDelegate> {
     NSInteger _currentScale;
 }
 
@@ -287,6 +287,7 @@
     
     UIViewController *vc = [self getMatchVCWithModel:model];
     if (vc) {
+        vc.transitioningDelegate = self;
         [self showViewController:vc sender:nil];
     }
 }
@@ -336,7 +337,7 @@
     
     UIViewController *vc = [self getMatchVCWithModel:model];
     if (vc) {
-        [self showViewController:vc sender:self];
+        [self presentViewController:vc animated:YES completion:nil];
     }
 }
 
@@ -363,5 +364,74 @@
     NSString * dateString = [formatter1 stringFromDate:date];
     return dateString;
 }
+
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    [super prepareForSegue:segue sender:sender];
+//    UIViewController *vc = segue.destinationViewController;
+//    vc.transitioningDelegate = self;
+//}
+
+#pragma mark - <RMPZoomTransitionAnimating>
+
+- (UIImageView *)transitionSourceImageView
+{
+    NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
+    JYCollectionViewCell *cell = (JYCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:cell.imageView.image];
+    imageView.contentMode = cell.imageView.contentMode;
+    imageView.clipsToBounds = NO;
+    imageView.userInteractionEnabled = NO;
+    imageView.frame = [cell.imageView convertRect:cell.imageView.frame toView:self.collectionView.superview];
+    return imageView;
+}
+
+- (UIColor *)transitionSourceBackgroundColor
+{
+    return self.collectionView.backgroundColor;
+}
+
+- (CGRect)transitionDestinationImageViewFrame
+{
+    NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
+    JYCollectionViewCell *cell = (JYCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
+    CGRect cellFrameInSuperview = [cell.imageView convertRect:cell.imageView.frame toView:self.collectionView.superview];
+    return cellFrameInSuperview;
+}
+
+#pragma mark - <UIViewControllerTransitioningDelegate>
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source
+{
+    id <RMPZoomTransitionAnimating, RMPZoomTransitionDelegate> sourceTransition = (id<RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>)source;
+    id <RMPZoomTransitionAnimating, RMPZoomTransitionDelegate> destinationTransition = (id<RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>)presented;
+    if ([sourceTransition conformsToProtocol:@protocol(RMPZoomTransitionAnimating)] &&
+        [destinationTransition conformsToProtocol:@protocol(RMPZoomTransitionAnimating)]) {
+        RMPZoomTransitionAnimator *animator = [[RMPZoomTransitionAnimator alloc] init];
+        animator.goingForward = YES;
+        animator.sourceTransition = sourceTransition;
+        animator.destinationTransition = destinationTransition;
+        return animator;
+    }
+    return nil;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    id <RMPZoomTransitionAnimating, RMPZoomTransitionDelegate> sourceTransition = (id<RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>)dismissed;
+    id <RMPZoomTransitionAnimating, RMPZoomTransitionDelegate> destinationTransition = (id<RMPZoomTransitionAnimating, RMPZoomTransitionDelegate>)self;
+    if ([sourceTransition conformsToProtocol:@protocol(RMPZoomTransitionAnimating)] &&
+        [destinationTransition conformsToProtocol:@protocol(RMPZoomTransitionAnimating)]) {
+        RMPZoomTransitionAnimator *animator = [[RMPZoomTransitionAnimator alloc] init];
+        animator.goingForward = NO;
+        animator.sourceTransition = sourceTransition;
+        animator.destinationTransition = destinationTransition;
+        return animator;
+    }
+    return nil;
+}
+
 
 @end

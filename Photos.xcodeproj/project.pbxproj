@@ -28,6 +28,7 @@
 		F68C6C241F98EEC200ABB648 /* FirstDecorationSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F68C6C1E1F98EEC200ABB648 /* FirstDecorationSectionView.xib */; };
 		F68C6C251F98EEC200ABB648 /* TYDecorationSectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F68C6C201F98EEC200ABB648 /* TYDecorationSectionLayout.m */; };
 		F68C6C261F98EEC200ABB648 /* FMHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = F68C6C221F98EEC200ABB648 /* FMHeadView.m */; };
+		F69EE3991F99DEB2004C417C /* RMPZoomTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = F69EE3971F99DEB1004C417C /* RMPZoomTransitionAnimator.m */; };
 		F6E131091F7810EF00185833 /* JYThumbVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E131071F7810EF00185833 /* JYThumbVC.m */; };
 		F6E1310A1F7810EF00185833 /* JYThumbVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6E131081F7810EF00185833 /* JYThumbVC.xib */; };
 /* End PBXBuildFile section */
@@ -92,6 +93,8 @@
 		F68C6C201F98EEC200ABB648 /* TYDecorationSectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYDecorationSectionLayout.m; sourceTree = "<group>"; };
 		F68C6C211F98EEC200ABB648 /* FMHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMHeadView.h; sourceTree = "<group>"; };
 		F68C6C221F98EEC200ABB648 /* FMHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMHeadView.m; sourceTree = "<group>"; };
+		F69EE3971F99DEB1004C417C /* RMPZoomTransitionAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RMPZoomTransitionAnimator.m; sourceTree = "<group>"; };
+		F69EE3981F99DEB1004C417C /* RMPZoomTransitionAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RMPZoomTransitionAnimator.h; sourceTree = "<group>"; };
 		F6E131061F7810EF00185833 /* JYThumbVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYThumbVC.h; path = ../../JYThumbVC.h; sourceTree = "<group>"; };
 		F6E131071F7810EF00185833 /* JYThumbVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYThumbVC.m; path = ../../JYThumbVC.m; sourceTree = "<group>"; };
 		F6E131081F7810EF00185833 /* JYThumbVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JYThumbVC.xib; path = ../../JYThumbVC.xib; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 		F65FF61C1F77FC0F00B38C6E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F69EE3981F99DEB1004C417C /* RMPZoomTransitionAnimator.h */,
+				F69EE3971F99DEB1004C417C /* RMPZoomTransitionAnimator.m */,
 				F68C6C1C1F98EEC200ABB648 /* FirstDecorationSectionView.h */,
 				F68C6C1D1F98EEC200ABB648 /* FirstDecorationSectionView.m */,
 				F68C6C1E1F98EEC200ABB648 /* FirstDecorationSectionView.xib */,
@@ -374,6 +379,7 @@
 				F65FF6171F77D5EF00B38C6E /* PHFetchResult+JYEXT.m in Sources */,
 				F6066DEE1F73F5CF0078EC9D /* ViewController.m in Sources */,
 				F68C6C251F98EEC200ABB648 /* TYDecorationSectionLayout.m in Sources */,
+				F69EE3991F99DEB2004C417C /* RMPZoomTransitionAnimator.m in Sources */,
 				F68C6C261F98EEC200ABB648 /* FMHeadView.m in Sources */,
 				F677BF521F961257009184D1 /* JYShowBigImgViewController.m in Sources */,
 				F65FF61F1F77FC7300B38C6E /* JYCollectionViewCell.m in Sources */,
