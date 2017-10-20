@@ -16,9 +16,7 @@
 }
 
 - (void)applyLayoutAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes{
-//    self.isChoose = NO;//初始状态
     if(!_contentView){
-//        CGRectMake(-((20+44)/2), 0, self.jy_Width + (20+44)/2, self.jy_Height)
         _contentView = [[UIView alloc]initWithFrame:CGRectZero];
         _contentView.backgroundColor = [UIColor whiteColor];
 //        _contentView.backgroundColor = UICOLOR_RGB(0xfafafa);

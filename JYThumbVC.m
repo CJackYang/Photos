@@ -272,7 +272,7 @@
 //headView
 - (FMHeadView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     FMHeadView * headView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headView" forIndexPath:indexPath];
-    headView.headTitle = @"123";
+    headView.headTitle = [self getDateStringWithPhoto: ((JYAsset *)((NSMutableArray *)_arrDataSources[indexPath.section])[indexPath.row]).asset.creationDate];
     headView.fmIndexPath = indexPath;
 //    headView.fmDelegate = self;
     return headView;
@@ -354,5 +354,14 @@
     return CGSizeMake(w, h);
 }
 
+#pragma mark - util
+
+-(NSString *)getDateStringWithPhoto:(NSDate *)date{
+    NSDateFormatter * formatter1 = [[NSDateFormatter alloc]init];
+    formatter1.dateFormat = @"yyyy-MM-dd";
+    [formatter1 setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    NSString * dateString = [formatter1 stringFromDate:date];
+    return dateString;
+}
 
 @end
