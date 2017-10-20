@@ -37,7 +37,7 @@
     
     UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 110, 30)];
     lab.textAlignment = NSTextAlignmentCenter;
-    lab.textColor = [UIColor whiteColor];
+    lab.textColor = [UIColor blackColor];
     lab.font = [UIFont systemFontOfSize:16];
     lab.text = @"加载中";
     
