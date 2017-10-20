@@ -167,7 +167,7 @@
     cell.allSelectLivePhoto = YES;
     cell.showSelectBtn = NO;
     cell.cornerRadio = 0;
-    cell.showMask = YES;
+    cell.showMask = NO;
     cell.maskColor = [UIColor blackColor];
     cell.model = model;
     

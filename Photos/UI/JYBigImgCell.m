@@ -885,7 +885,7 @@
     
     if ([keyPath isEqualToString:@"status"]) {
         if ([playerItem status] == AVPlayerStatusReadyToPlay) {
-            //status 点进去看 有三种状态
+            //status 有三种状态
             self.imageView.hidden = YES;
         }
     }
