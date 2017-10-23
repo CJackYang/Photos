@@ -30,6 +30,7 @@
     UIScrollView *_selectScrollView;
     NSInteger _currentPage;
     
+    UIPanGestureRecognizer *_panGesture;
 //    NSArray *_arrSelPhotosBackup;
 //    NSMutableArray *_arrSelAssets;
 //    NSArray *_arrSelAssetsBackup;
@@ -37,6 +38,8 @@
     BOOL _isFirstAppear;
     
     BOOL _hideNavBar;
+    
+    BOOL _isdraggingPhoto;
     
     //设备旋转前的index
     NSInteger _indexBeforeRotation;
@@ -71,6 +74,10 @@
     [backBtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:backBtn];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationChanged:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
+    _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)];
+    [_panGesture setMinimumNumberOfTouches:1];
+    [_panGesture setMaximumNumberOfTouches:1];
+    [self.view addGestureRecognizer:_panGesture];
 }
 
 - (void)back:(id)btn
@@ -113,6 +120,96 @@
     _bottomView.frame = frame;
     _btnEdit.frame = CGRectMake(kViewWidth/2-30, 7, 60, 30);
     _btnDone.frame = CGRectMake(kViewWidth - 82, 7, 70, 30);
+}
+
+#pragma mark - panGesture Handler
+
+- (void)panGestureRecognized:(id)sender {
+    // Initial Setup
+    UICollectionView *scrollView = _collectionView;
+    
+    static float firstX, firstY;
+    
+    float viewHeight = scrollView.frame.size.height;
+    float viewHalfHeight = viewHeight/2;
+    
+    CGPoint translatedPoint = [(UIPanGestureRecognizer*)sender translationInView:self.view];
+    
+    // Gesture Began
+    if ([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
+//        [self setControlsHidden:YES animated:YES permanent:YES];
+        
+        firstX = [scrollView center].x;
+        firstY = [scrollView center].y;
+        
+//        _senderViewForAnimation.hidden = (_currentPageIndex == _initalPageIndex);
+        
+        _isdraggingPhoto = YES;
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+    
+    translatedPoint = CGPointMake(firstX, firstY+translatedPoint.y);
+    [scrollView setCenter:translatedPoint];
+    
+    float newY = scrollView.center.y - viewHalfHeight;
+    float newAlpha = 1 - fabsf(newY)/viewHeight; //abs(newY)/viewHeight * 1.8;
+    
+    self.view.opaque = YES;
+    
+    self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:newAlpha];
+    
+    // Gesture Ended
+    if ([(UIPanGestureRecognizer*)sender state] == UIGestureRecognizerStateEnded) {
+        if(scrollView.center.y > viewHalfHeight+40 || scrollView.center.y < viewHalfHeight-40) // Automatic Dismiss View
+        {
+//            if (_senderViewForAnimation && _currentPageIndex == _initalPageIndex) {
+//                [self performCloseAnimationWithScrollView:scrollView];
+//                return;
+//            }
+            
+            CGFloat finalX = firstX, finalY;
+            
+            CGFloat windowsHeigt = [self.view frame].size.height;
+            
+            if(scrollView.center.y > viewHalfHeight+30) // swipe down
+                finalY = windowsHeigt*2;
+            else // swipe up
+                finalY = -viewHalfHeight;
+            
+            CGFloat animationDuration = 0.35;
+            
+            [UIView beginAnimations:nil context:NULL];
+            [UIView setAnimationDuration:animationDuration];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+            [UIView setAnimationDelegate:self];
+            [scrollView setCenter:CGPointMake(finalX, finalY)];
+            self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
+            [UIView commitAnimations];
+            
+            [self performSelector:@selector(back:) withObject:self afterDelay:animationDuration];
+        }
+        else // Continue Showing View
+        {
+            _isdraggingPhoto = NO;
+            [self setNeedsStatusBarAppearanceUpdate];
+            
+            self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:1];
+            
+            CGFloat velocityY = (.35*[(UIPanGestureRecognizer*)sender velocityInView:self.view].y);
+            
+            CGFloat finalX = firstX;
+            CGFloat finalY = viewHalfHeight;
+            
+            CGFloat animationDuration = (ABS(velocityY)*.0002)+.2;
+            
+            [UIView beginAnimations:nil context:NULL];
+            [UIView setAnimationDuration:animationDuration];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
+            [UIView setAnimationDelegate:self];
+            [scrollView setCenter:CGPointMake(finalX, finalY)];
+            [UIView commitAnimations];
+        }
+    }
 }
 
 #pragma mark - 设备旋转
