@@ -66,8 +66,16 @@
     self.title = [NSString stringWithFormat:@"%ld/%ld", _currentPage, self.models.count];
     [self initNavBtns];
     [self initCollectionView];
-    
+    UIButton * backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0 , 0, 100, 50)];
+    [backBtn setBackgroundColor:[UIColor redColor]];
+    [backBtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:backBtn];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationChanged:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
+}
+
+- (void)back:(id)btn
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -249,37 +257,74 @@
     return model;
 }
 
-//- (UIImageView *)transitionSourceImageView
-//{
-//    JYBigImgCell *cell = (JYBigImgCell *)[_collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:_currentPage-1 inSection:0]];
-//    UIimageView = [[UIImageView alloc] initWithImage:self.mainImageView.image];
-//    imageView.contentMode = self.mainImageView.contentMode;
-//    imageView.clipsToBounds = YES;
-//    imageView.userInteractionEnabled = NO;
-//    imageView.frame = self.mainImageView.frame;
-//    return imageView;
-//}
+- (CGRect)getCurrentPageRect
+{
+    CGRect frame;
+    JYAsset * model = [self getCurrentPageModel];
+    
+    CGFloat w, h;
+    if (model.asset) {
+        w = [model.asset pixelWidth];
+        h = [model.asset pixelHeight];
+    } else if (model.image) {
+        w = model.image.size.width;
+        h = model.image.size.height;
+    } else {
+        w = kViewWidth;
+        h = kViewHeight;
+    }
+    
+    CGFloat width = MIN(kViewWidth, w);
+    frame.origin = CGPointZero;
+    frame.size.width = width;
+    
+    CGFloat imageScale = h/w;
+    CGFloat screenScale = kViewHeight/kViewWidth;
+    
+    if (imageScale > screenScale) {
+        frame.size.height = floorf(width * imageScale);
+    } else {
+        CGFloat height = floorf(width * imageScale);
+        if (height < 1 || isnan(height)) {
+            //iCloud图片height为NaN
+            height = GetViewHeight(self.view);
+        }
+        frame.size.height = height;
+    }
+    frame.origin.x = (kViewWidth - frame.size.width)/2;
+    frame.origin.y = (kViewHeight - frame.size.height)/2;
+    
+    return frame;
+}
 
-//- (UIColor *)transitionSourceBackgroundColor
-//{
-//    return self.view.backgroundColor;
-//}
-//
-//- (CGRect)transitionDestinationImageViewFrame
-//{
-//    CGFloat width = CGRectGetWidth(self.view.frame);
-//    CGRect frame = self.mainImageView.frame;
-//    frame.size.width = width;
-//    return frame;
-//}
-//
-//#pragma mark - <RMPZoomTransitionDelegate>
-//
-//- (void)zoomTransitionAnimator:(RMPZoomTransitionAnimator *)animator
-//         didCompleteTransition:(BOOL)didComplete
-//      animatingSourceImageView:(UIImageView *)imageView
-//{
+- (UIImageView *)transitionSourceImageView
+{
+    JYBigImgCell *cell = (JYBigImgCell *)[_collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:_currentPage-1 inSection:0]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:cell.previewView.image];
+//    imageView.contentMode = self.mainImageView.contentMode;
+    imageView.clipsToBounds = YES;
+    imageView.userInteractionEnabled = NO;
+    imageView.frame = cell.previewView.frame;
+    return imageView;
+}
+
+- (UIColor *)transitionSourceBackgroundColor
+{
+    return self.view.backgroundColor;
+}
+
+- (CGRect)transitionDestinationImageViewFrame
+{
+    return [self getCurrentPageRect];
+}
+
+#pragma mark - <RMPZoomTransitionDelegate>
+
+- (void)zoomTransitionAnimator:(RMPZoomTransitionAnimator *)animator
+         didCompleteTransition:(BOOL)didComplete
+      animatingSourceImageView:(UIImageView *)imageView
+{
 //    self.mainImageView.image = imageView.image;
-//}
+}
 
 @end

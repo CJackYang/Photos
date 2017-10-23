@@ -11,7 +11,7 @@
 
 @class JYAssetList;
 
-@interface JYThumbVC : UIViewController<RMPZoomTransitionDelegate>
+@interface JYThumbVC : UIViewController<RMPZoomTransitionAnimating>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 

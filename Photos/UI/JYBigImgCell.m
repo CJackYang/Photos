@@ -269,6 +269,14 @@
     //子类重写
 }
 
+//- (UIView *)containerView
+//{
+//    if (!_containerView) {
+//        _containerView = [[UIView alloc] init];
+//    }
+//    return _containerView;
+//}
+
 @end
 
 
